@@ -5,8 +5,11 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.main{
+body{
     background-color: rgb(32, 33, 36);
+}
+
+.main{
     height:1000px;  
 }
 
