@@ -46,7 +46,8 @@ function notestext() {
 
 createBtn.addEventListener("click" , notestext);
 
-
+//create notes 
+  
 
 
 
