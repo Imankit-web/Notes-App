@@ -58,6 +58,7 @@ body{
     height:100%;
     font-family: inherit;
     font-size: 1.5rem;
+    color: rgba(225 ,225 ,225 , 0.8);
 }
 
 #search-input::placeholder{
@@ -102,31 +103,33 @@ hr{
 }
 
 /* Initially hide title + button */
-#note-title,
+#note-titleI,
 #create-btn {
     display: none;
 }
 
-#note-content {
+#note-contentI {
     background: transparent;
     border: none;
     resize: none;
     outline: none;
     font-size: 1rem;
+    color: rgba(225 ,225 ,225 , 0.8);
 }
 
 /* When active (expanded) */
-.notes-input.active #note-title,
+.notes-input.active #note-titleI,
 .notes-input.active #create-btn {
     display: block;
 }
 
-.notes-input.active #note-title {
+.notes-input.active #note-titleI {
     margin-bottom: 5px;
     background: transparent;
     border: none;
     outline: none;
     font-size: 1.1rem;
+    color: rgba(225 ,225 ,225 , 0.8);
 }
 
 #create-btn {

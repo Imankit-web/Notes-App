@@ -2,9 +2,10 @@ let searchBtn = document.querySelector("#search-btn");
 let searchInput = document.querySelector("#search-input");
 let notesContainer = document.getElementById("notes-container");
 let createBtn = document.querySelector("#create-btn");
-let noteTitle = document.getElementById("note-title");
-let noteContent = document.getElementById("note-content");
-
+let noteTitleI = document.getElementById("note-titleI");
+let noteContentI = document.getElementById("note-contentI");
+let notesTitleO = document.querySelector(".notes-titleO");
+let notesParaO = document.querySelector(".notes-paraO");
 
 // Search box text function
 function searchtext(){
@@ -16,8 +17,6 @@ function searchtext(){
 } 
 
 searchBtn.addEventListener("click", searchtext);
-
-
 
 notesContainer.addEventListener("click", () => {
     notesContainer.classList.add("active");
@@ -31,33 +30,36 @@ document.addEventListener("click", (e) => {
 
 //logic for create button to work
 
-
 function notestext() {
-    let title = noteTitle.value;
-    let content = noteContent.value;
+    let title = noteTitleI.value;
+    let content = noteContentI.value;
 
     if (title.trim() !== "" && content.trim() !== "") {
-        console.log(title,"\n",content);
+        notesTitleO.textContent = title;
+        notesParaO.textContent = content;
 
-        noteTitle.value = "";
-        noteContent.value = "";
+        noteTitleI.value = "";
+        noteContentI.value = "";
     }
 }
 
 createBtn.addEventListener("click" , notestext);
 
-//create notes 
-  
 
 
 
 
-
-//enter button press logic
+//keyboard Enter button input
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        searchtext();
-        notestext();
-    };
+        if (document.activeElement === searchInput) {
+            searchtext();
+        } else if (
+            document.activeElement === noteTitleI || 
+            document.activeElement === noteContentI
+        ) {
+            notestext();
+        }
+    }
 });
