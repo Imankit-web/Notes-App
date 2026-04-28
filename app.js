@@ -4,8 +4,8 @@ let notesContainer = document.getElementById("notes-container");
 let createBtn = document.querySelector("#create-btn");
 let noteTitleI = document.getElementById("note-titleI");
 let noteContentI = document.getElementById("note-contentI");
-let notesTitleO = document.querySelector(".notes-titleO");
-let notesParaO = document.querySelector(".notes-paraO");
+let msg = document.querySelector(".msg")
+
 
 // Search box text function
 function searchtext(){
@@ -35,14 +35,27 @@ function notestext() {
     let content = noteContentI.value;
 
     if (title.trim() !== "" && content.trim() !== "") {
-        notesTitleO.textContent = title;
-        notesParaO.textContent = content;
 
+        // 🔥 Create new note
+        let note = document.createElement("div");
+        note.classList.add("notes-output");
+
+        note.innerHTML = `
+            <h1 class="notes-titleO">${title}</h1>
+            <p class="notes-paraO">${content}</p>
+        `;
+
+        // 🔥 Append to container
+        document.getElementById("notes-list").appendChild(note);
+
+        // Clear input
         noteTitleI.value = "";
         noteContentI.value = "";
+
+        //hide msg container 
+        msg.classList.add("hidden");
     }
 }
-
 createBtn.addEventListener("click" , notestext);
 
 

@@ -166,7 +166,7 @@ hr{
 }
 
 
-
+/*msg container */
 
 .msg{
     margin-top:200px;
@@ -185,3 +185,6 @@ hr{
     color: rgba(225 ,225 ,225 , 0.2);
 }
 
+.hidden{
+    display:none;
+}
