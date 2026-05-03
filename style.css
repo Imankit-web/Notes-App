@@ -103,6 +103,7 @@ hr{
 }
 
 /* Initially hide title + button */
+
 #note-titleI,
 #create-btn {
     display: none;
@@ -118,6 +119,7 @@ hr{
 }
 
 /* When active (expanded) */
+
 .notes-input.active #note-titleI,
 .notes-input.active #create-btn {
     display: block;
@@ -210,4 +212,26 @@ hr{
 
 .hidden{
     display:none;
+}
+
+.edit-btn {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.notes-output:hover .edit-btn {
+    opacity: 1;
+}
+
+/* highlight */
+mark {
+    background: yellow;
+    color: black;
 }
