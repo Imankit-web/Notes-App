@@ -39,7 +39,7 @@ function renderNotes() {
             <h1 class="notes-titleO">${noteData.title}</h1>
             <p class="notes-paraO">${noteData.content}</p>
 
-            <button class="edit-btn">✏️</button>
+            <button class="edit-btn"><i class="fa-regular fa-pen-to-square"></i></button>
             <button class="del-btn">
                 <i class="fa-solid fa-delete-left"></i>
             </button>
@@ -48,7 +48,7 @@ function renderNotes() {
         notesList.appendChild(note);
 
         // DELETE
-        
+
         note.querySelector(".del-btn").addEventListener("click", () => {
             notes.splice(index, 1);
             saveNotes();

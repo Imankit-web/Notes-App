@@ -4,6 +4,10 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+i {
+    color: rgba(225 ,225 ,225 , 0.8);
+}
+
 body{
     background-color: rgb(32, 33, 36);
     color: rgba(225 ,225 ,225 , 0.8);
