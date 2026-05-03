@@ -4,7 +4,7 @@ let notesContainer = document.getElementById("notes-container");
 let createBtn = document.querySelector("#create-btn");
 let noteTitleI = document.getElementById("note-titleI");
 let noteContentI = document.getElementById("note-contentI");
-let msg = document.querySelector(".msg")
+let msg = document.querySelector(".msg");
 
 
 // Search box text function
@@ -36,26 +36,38 @@ function notestext() {
 
     if (title.trim() !== "" && content.trim() !== "") {
 
-        // 🔥 Create new note
         let note = document.createElement("div");
         note.classList.add("notes-output");
 
         note.innerHTML = `
             <h1 class="notes-titleO">${title}</h1>
             <p class="notes-paraO">${content}</p>
+            <button class="del-btn">
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
         `;
 
-        // 🔥 Append to container
         document.getElementById("notes-list").appendChild(note);
 
-        // Clear input
+        //  attach delete to THIS note only
+        let delBtn = note.querySelector(".del-btn");
+
+        delBtn.addEventListener("click", () => {
+            note.remove();
+
+            // show msg again if no notes left
+            if (document.getElementById("notes-list").children.length === 0) {
+                msg.classList.remove("hidden");
+            }
+        });
+
         noteTitleI.value = "";
         noteContentI.value = "";
 
-        //hide msg container 
         msg.classList.add("hidden");
     }
 }
+
 createBtn.addEventListener("click" , notestext);
 
 
